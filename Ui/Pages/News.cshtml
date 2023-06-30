@@ -1,0 +1,20 @@
+﻿@page "/news"
+@model Ui.Pages.NewsModel
+<PageTitle>News</PageTitle>
+
+<h1>News Feed</h1>
+
+
+<button onclick="ToggelHighestScore()">Highest Score</button>
+
+@if (!String.IsNullOrEmpty(Model?.Newsfeed?.Error)) {
+	<p><em>Unable to find news...<br />@Model.Newsfeed.Error</em></p>
+} else if (Model?.Newsfeed == null) {
+	<p><em>Loading...</em></p>
+} else {
+	<ul>
+		@foreach (var item in Model.Newsfeed.TopItems) {
+			<li><a target="_blank" href="@item.Url">@item.Title :: @item.Score</a></li>
+		}
+	</ul>
+}

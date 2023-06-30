@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "NewsFeed": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7193"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30463,
+      "useSSL": false
+    }
+  }
+}
